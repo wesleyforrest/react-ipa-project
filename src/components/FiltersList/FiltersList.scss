@@ -1,0 +1,13 @@
+.filters-list {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-evenly;
+
+  &__input {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+  }
+}
