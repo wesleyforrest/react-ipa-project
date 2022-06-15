@@ -4,7 +4,7 @@ import "./Main.scss";
 
 const Main = (props) => {
   const { beers } = props;
-
+  console.log("Main", beers);
   return (
     <>
       <div className="main">
