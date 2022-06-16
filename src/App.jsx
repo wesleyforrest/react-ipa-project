@@ -35,10 +35,13 @@ function App() {
   const selectByFilter = async (event) => {
     event.preventDefault();
     let input = event.target.value;
-    const res = await fetch(
-      "https://api.punkapi.com/v2/beers?beer_name=" + input
-    );
-    const data = await res.json();
+    if ((input = beers.abv > 17)) {
+      ("https://api.punkapi.com/v2/beers/?abv_gt=17");
+    }
+    // const res = await fetch(
+    //   "https://api.punkapi.com/v2/beers?beer_name=" + input
+    // );
+    // const data = await res.json();
 
     setBeers(data);
   };
