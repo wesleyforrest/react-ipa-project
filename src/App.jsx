@@ -30,14 +30,24 @@ function App() {
     const data = await res.json();
 
     setBeers(data);
-    console.log("Hi", input, data);
+  };
+
+  const selectByFilter = async (event) => {
+    event.preventDefault();
+    let input = event.target.value;
+    const res = await fetch(
+      "https://api.punkapi.com/v2/beers?beer_name=" + input
+    );
+    const data = await res.json();
+
+    setBeers(data);
   };
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar handleSubmit={handleSubmit} selectByFilter={selectByFilter} />
+
       <Main beers={beers} />
-      <SearchBox handleSubmit={handleSubmit} beers={beers} />
     </div>
   );
 }

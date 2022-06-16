@@ -1,6 +1,6 @@
 import React from "react";
 import CardList from "../CardList/CardList";
-import "./SearchBox.scss";
+import NavBar from "../../containers/NavBar/NavBar";
 
 const SearchBox = (props) => {
   const { handleSubmit, beers } = props;
