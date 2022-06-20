@@ -4,11 +4,16 @@ import SearchBox from "../../components/SearchBox/SearchBox";
 import FiltersList from "../../components/FiltersList/FiltersList";
 
 const NavBar = (props) => {
-  const { handleSubmit, selectByFilter } = props;
+  const { handleSubmit, filteredByAcidity, filteredByAbv, filteredByClassic } =
+    props;
   return (
     <div className="nav-bar">
       <SearchBox handleSubmit={handleSubmit} />
-      <FiltersList selectByFilter={selectByFilter} />
+      <FiltersList
+        filteredByAbv={filteredByAbv}
+        filteredByClassic={filteredByClassic}
+        filteredByAcidity={filteredByAcidity}
+      />
     </div>
   );
 };

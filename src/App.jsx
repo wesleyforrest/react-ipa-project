@@ -32,23 +32,52 @@ function App() {
     setBeers(data);
   };
 
-  const selectByFilter = async (event) => {
+  const filteredByAbv = async (event) => {
     event.preventDefault();
-    let input = event.target.value;
-    if ((input = beers.abv > 17)) {
-      ("https://api.punkapi.com/v2/beers/?abv_gt=17");
-    }
-    // const res = await fetch(
-    //   "https://api.punkapi.com/v2/beers?beer_name=" + input
-    // );
-    // const data = await res.json();
+    let input = event.target.checked;
+    if (input) {
+      const res = await fetch("https://api.punkapi.com/v2/beers?abv_gt=17");
 
-    setBeers(data);
+      const data = await res.json();
+
+      setBeers(data);
+    }
+  };
+
+  const filteredByClassic = async (event) => {
+    event.preventDefault();
+    let input = event.target.checked;
+    if (input) {
+      const res = await fetch(
+        "https://api.punkapi.com/v2/beers?brewed_before=01-2010"
+      );
+
+      const data = await res.json();
+
+      setBeers(data);
+    }
+  };
+
+  const filteredByAcidity = async (event) => {
+    event.preventDefault();
+    let input = event.target.checked;
+    if (input) {
+      const res = await fetch("https://api.punkapi.com/v2/beers?ibu_lt=4");
+
+      const data = await res.json();
+
+      setBeers(data);
+    }
   };
 
   return (
     <div className="App">
-      <NavBar handleSubmit={handleSubmit} selectByFilter={selectByFilter} />
+      <NavBar
+        handleSubmit={handleSubmit}
+        filteredByAbv={filteredByAbv}
+        filteredByClassic={filteredByClassic}
+        filteredByAcidity={filteredByAcidity}
+      />
 
       <Main beers={beers} />
     </div>
