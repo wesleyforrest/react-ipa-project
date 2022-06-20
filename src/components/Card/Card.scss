@@ -1,13 +1,28 @@
+$color-wheat: #f5e0b7;
+$color-dark-byzantium: #59344f;
+$color-rocket-metallic: #857e7b;
+
 .card {
-  border: 1px solid greenyellow;
+  border: 3px solid $color-rocket-metallic;
   width: 250px;
   height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: $color-wheat;
 
   &__img {
     width: auto;
-    height: 150px;
+    margin-top: 20px;
+    height: 120px;
+  }
+
+  &__tagline {
+    margin: 5px;
+  }
+
+  &__abv {
   }
 }

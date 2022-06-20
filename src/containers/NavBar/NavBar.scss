@@ -1,8 +1,10 @@
+$color-vegas-gold: #d6ba73;
+
 .nav-bar {
   display: flex;
   height: 50px;
   width: 100%;
-  background-color: orange;
+  background-color: $color-vegas-gold;
   font-size: 1rem;
   flex-direction: row;
   align-items: center;
