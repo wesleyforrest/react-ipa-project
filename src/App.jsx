@@ -7,18 +7,20 @@ import beerData from "./data/beers";
 function App() {
   const [searchInput, setSearchInput] = useState();
   const [beers, setBeers] = useState([]);
+  const [abvValue, setAbvValue] = useState(false);
+  const [classicValue, setClassicValue] = useState(false);
+  const [acidityValue, setAcidityValue] = useState(false);
 
   const getBeers = async () => {
     let url = "https://api.punkapi.com/v2/beers";
     const res = await fetch(url);
     const data = await res.json();
-    console.log({ data });
+
     setBeers(data);
   };
 
   useEffect(() => {
     getBeers();
-    console.log(beers);
   }, []);
 
   const handleSubmit = async (event) => {
@@ -33,7 +35,9 @@ function App() {
   };
 
   const filteredByAbv = async (event) => {
-    event.preventDefault();
+    setAbvValue(true);
+    setClassicValue(false);
+    setAcidityValue(false);
     let input = event.target.checked;
     if (input) {
       const res = await fetch("https://api.punkapi.com/v2/beers?abv_gt=17");
@@ -45,7 +49,9 @@ function App() {
   };
 
   const filteredByClassic = async (event) => {
-    event.preventDefault();
+    setAbvValue(false);
+    setClassicValue(true);
+    setAcidityValue(false);
     let input = event.target.checked;
     if (input) {
       const res = await fetch(
@@ -59,7 +65,9 @@ function App() {
   };
 
   const filteredByAcidity = async (event) => {
-    event.preventDefault();
+    setAbvValue(false);
+    setClassicValue(false);
+    setAcidityValue(true);
     let input = event.target.checked;
     if (input) {
       const res = await fetch("https://api.punkapi.com/v2/beers?ibu_lt=4");
@@ -77,6 +85,9 @@ function App() {
         filteredByAbv={filteredByAbv}
         filteredByClassic={filteredByClassic}
         filteredByAcidity={filteredByAcidity}
+        abvValue={abvValue}
+        classicValue={classicValue}
+        acidityValue={acidityValue}
       />
 
       <Main beers={beers} />
