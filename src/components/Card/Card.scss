@@ -1,5 +1,5 @@
 $color-wheat: #f5e0b7;
-$color-dark-byzantium: #59344f;
+$color-dark-mauve: #593550;
 $color-rocket-metallic: #857e7b;
 
 .card {
@@ -13,6 +13,10 @@ $color-rocket-metallic: #857e7b;
   border-radius: 20px;
   background-color: $color-wheat;
 
+  &__name {
+    margin: 5px;
+  }
+
   &__img {
     width: auto;
     margin-top: 20px;
@@ -24,6 +28,6 @@ $color-rocket-metallic: #857e7b;
   }
 
   &__abv {
-    color: aqua;
+    color: $color-dark-mauve;
   }
 }
