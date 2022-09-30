@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-ipa-project/static/css/main.d55f05df.css",
+    "main.js": "/react-ipa-project/static/js/main.0a44ed75.js",
+    "static/js/787.dc8e3d3a.chunk.js": "/react-ipa-project/static/js/787.dc8e3d3a.chunk.js",
+    "index.html": "/react-ipa-project/index.html",
+    "main.d55f05df.css.map": "/react-ipa-project/static/css/main.d55f05df.css.map",
+    "main.0a44ed75.js.map": "/react-ipa-project/static/js/main.0a44ed75.js.map",
+    "787.dc8e3d3a.chunk.js.map": "/react-ipa-project/static/js/787.dc8e3d3a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d55f05df.css",
+    "static/js/main.0a44ed75.js"
+  ]
+}
